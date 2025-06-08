@@ -10,6 +10,7 @@ This is a Spring Boot application that demonstrates JWT (JSON Web Token) based a
 - Protected endpoints with JWT validation
 - MySQL database integration
 - Cross-Origin Resource Sharing (CORS) support
+- Swagger UI API documentation
 
 ## Prerequisites
 
@@ -22,6 +23,7 @@ This is a Spring Boot application that demonstrates JWT (JSON Web Token) based a
 ```
 src/main/java/com/jwtsecurity/demo/
 ├── config/
+│   ├── OpenApiConfig.java
 │   └── SecurityConfig.java
 ├── controller/
 │   ├── AuthController.java
@@ -59,6 +61,26 @@ src/main/java/com/jwtsecurity/demo/
    ```bash
    mvn spring-boot:run
    ```
+
+## API Documentation (Swagger UI)
+
+The application includes Swagger UI for API documentation. You can access it at:
+
+- Swagger UI: http://localhost:8080/swagger-ui.html
+- OpenAPI JSON: http://localhost:8080/api-docs
+
+The Swagger UI provides:
+- Interactive API documentation
+- Try-it-out functionality for testing endpoints
+- Request/response schemas
+- Authentication support
+- API grouping and filtering
+
+To use protected endpoints in Swagger UI:
+1. First, use the `/api/auth/login` endpoint to get a JWT token
+2. Click the "Authorize" button at the top of the page
+3. Enter your JWT token in the format: `Bearer your_token_here`
+4. Now you can test the protected endpoints
 
 ## API Endpoints
 
